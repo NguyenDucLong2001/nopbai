@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Long</title>
+</head>
+<body>
+<script>
+    let Long;
+    Long = "<table broder='1' withd='1430' height='175'>"
+    for (l=2;l<=9;l++){
+        Long = Long + "<tr>";
+        for (i=1;i<=9;i++) {
+            Long = Long + "<td>" + l + " x " + i + " = " + i*l + "</td>"
+        }
+        Long = Long + "</tr>";
+    }
+    Long = Long + "</table>";
+    document.write(Long)
+</script>
+</body>
+</html>

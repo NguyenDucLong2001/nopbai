@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Long</title>
+</head>
+<body>
+<form>
+    Cho ra bao nhiêu số nguyên tố
+    <br>
+    <input type="text" id ="Tom"/>
+    <p>
+        <button onclick="elephant()">Search</button>
+    </p>
+</form>
+<script>
+    function kt(n) {
+        let k;
+        for (k=2;k<n;k++){
+            if(n%k ==0){
+                return 0
+            }
+        }
+        return 1
+    }
+    function elephant() {
+        let dem =0;
+        let i =2;
+        d = Number(document.getElementById("Tom").value)
+        while (dem<d) {
+            if (kt(i)) {
+                document.write(i + " ");
+                dem++;
+            }
+            i++;
+        }
+    }
+</script>
+</body>
+</html>

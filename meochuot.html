@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C0919G1</title>
+</head>
+<body>
+<script>
+   function Chuot(name,weigth,speed,status,) {
+       this.name = name;
+       this.weight = weigth;
+       this.speed = speed;
+       this.status = status;
+       this.sound = function (stringChuot) {
+           if (this.status){
+               console.log(stringChuot);
+           }
+       }
+   }
+   let long = new Chuot("long",69,5,true);
+   let dung = new Chuot("dung",50,2,false);
+   let dong = new  Chuot("dong",55,1,true);
+
+</script>
+</body>
+</html>
