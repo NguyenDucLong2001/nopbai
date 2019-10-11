@@ -6,21 +6,58 @@
 </head>
 <body>
 <script>
-   function Chuot(name,weigth,speed,status,) {
-       this.name = name;
-       this.weight = weigth;
-       this.speed = speed;
-       this.status = status;
-       this.sound = function (stringChuot) {
-           if (this.status){
-               console.log(stringChuot);
-           }
-       }
-   }
-   let long = new Chuot("long",69,5,true);
-   let dung = new Chuot("dung",50,2,false);
-   let dong = new  Chuot("dong",55,1,true);
-
+    function Mouse(name,weight,speed,status) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = status;
+        this.getStatus = function () {
+            return this.status;
+        }
+        this.setStatus = function (newStatus) {
+            this.status = newStatus;
+        }
+        this.sound = function (stringMouse) {
+            if(this.status) {
+                console.log(stringMouse);
+            }
+        }
+    }
+    let hai=new Mouse('hai',60,20,true);
+    let dung= new Mouse('dung',60,30,false);
+    let dong = new Mouse('dong',60,50,true);
+    let phuong = new Mouse('phuong',60,100,true);
+    function Cat(name,weight,speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.sound = function (stringCat) {
+            console.log(stringCat);
+        }
+        this.catch = function (mouse) {
+            if(this.speed>mouse.speed)
+            {
+                console.log('Mèo ' + this.name + ' đã bắt được con chuột ' + mouse.name);
+            }
+            else {
+                console.log('Mèo ' + this.name + ' không bắt được con chuột ' + mouse.name);
+            }
+        }
+        this.eat = function (mouse) {
+            if(mouse.getStatus())
+            {
+                this.weight += mouse.weight;
+                mouse.setStatus(false);
+            }
+            else
+            {
+                console.log('con chuột này đã bị ăn');
+            }
+        }
+    }
+    let long = new Cat('long',58,99);
+    let minh = new Cat('minh',50,88);
+    let bang = new Cat(('bang',60,77));
 </script>
 </body>
 </html>

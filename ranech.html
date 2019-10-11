@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Long</title>
+</head>
+<body>
+<script>
+    function a_frog(name,weight,speed,status) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = status;
+        this.getStatus = function () {
+            return this.status;
+        }
+        this.setStatus = function (newStatus) {
+            this.status = newStatus;
+        }
+        this.sound = function (stringa_frog) {
+            if(this.status) {
+                console.log(stringa_frog);
+            }
+        }
+    }
+    let phuong =new a_frog('phuong',50,33,true);
+    let vi = new a_frog('vi',55,22,false);
+    let bang = new a_frog('bang',65,11,false);
+    let minh = new a_frog('minh',45,100,true);
+    function snake(name,weight,speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.sound = function (stringSnake) {
+            console.log(stringSnake);
+        }
+        this.bite = function (a_frog) {
+            if(this.speed>a_frog.speed)
+            {
+                console.log('Rắn ' + this.name + ' đã cắn được con ếch ' + a_frog.name);
+            }
+            else {
+                console.log('Rắn ' + this.name + ' không cắn được con ếch ' + a_frog.name);
+            }
+        }
+        this.eat = function (a_frog) {
+            if(a_frog().getStatus())
+            {
+                this.weight += a_frog.weight;
+                a_frog.setStatus(false);
+            }
+            else
+            {
+                console.log('con ếch này đã bị ăn');
+            }
+        }
+    }
+    let long = new snake('long',58,44);
+</script>
+</body>
+</html>
